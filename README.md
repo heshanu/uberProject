@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
+  <a href="http://nestjs.com/" target="blank"><img src="https://github.com/heshanu/uberProject/blob/master/Screenshot%20(59).png" /></a>
 </p>
 
 [circleci-image]: https://github.com/heshanu/uberProject/blob/master/Screenshot%20(59).png
