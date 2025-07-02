@@ -10,6 +10,7 @@ import { LoggingServiceController } from './logging-service.controller';
 import { LoggingServiceService } from './logging-service.service';
 import { LogginEntity } from './logginEntity';
 import { LogginEntityRepository } from './loggin-entity.repository';
+import { RiderModule } from '../rider/rider.module';
 
 @Module({
   imports: [
@@ -56,6 +57,7 @@ import { LogginEntityRepository } from './loggin-entity.repository';
         };
       },
     }),
+    RiderModule
   ],
   controllers: [LoggingServiceController],
   providers: [LoggingServiceService, LogginEntityRepository],
