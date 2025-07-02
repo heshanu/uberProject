@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common';
 import { RiderServiceController } from './rider-service.controller';
 import { RiderServiceService } from './rider-service.service';
@@ -7,4 +8,4 @@ import { RiderServiceService } from './rider-service.service';
   controllers: [RiderServiceController],
   providers: [RiderServiceService],
 })
-export class RiderServiceModule {}
+export class RiderServiceModule { }

@@ -1,13 +1,32 @@
 /* eslint-disable prettier/prettier */
-import { Controller, Get } from '@nestjs/common';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable prettier/prettier */
+import { Body, Controller, Get, Post, Param } from '@nestjs/common';
 import { LoggingServiceService } from './logging-service.service';
-
-@Controller()
+import { LoggingRequest } from './loggerModel';
+import { LoggingResponse } from './loggingResponse';
+@Controller("/logger")
 export class LoggingServiceController {
   constructor(private readonly loggingServiceService: LoggingServiceService) { }
 
+  @Get('/get')
+  sayHi(): string {
+    return "hi";
+  }
+
+  @Post()
+  saveLogger(@Body() notificationRequest: LoggingRequest): Promise<LoggingResponse> {
+    return this.loggingServiceService.saveLogging(notificationRequest);
+  }
+
   @Get()
-  getHello(): string {
-    return this.loggingServiceService.getHello();
+  getLogging(): Promise<LoggingRequest[]> {
+    return this.loggingServiceService.findAll();
+  }
+
+  @Get('/:id')
+  getLogById(@Param("id") id: number): Promise<LoggingRequest | null> {
+    return this.loggingServiceService.findById(id);
   }
 }
