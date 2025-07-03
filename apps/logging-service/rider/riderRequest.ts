@@ -1,17 +1,15 @@
 import { IsNotEmpty, IsNumber, IsString } from "class-validator";
 
 /* eslint-disable prettier/prettier */
-export interface RiderRequestDTO {
-@IsNumber()
-@IsNotEmpty()
-lng: number;
+export class RiderRequestDTO {
 
-@IsNumber()
-@IsNotEmpty()
-lat: number;
+    @IsNotEmpty()
+    lng: number;
 
-@IsString()
-@IsNotEmpty()
-riderId: string;
+    @IsNotEmpty()
+    lat: number;
+
+    @IsNotEmpty()
+    riderId: string;
 
 }
